@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './styles/App.css';
+import NavBar from "./components/NavigationBar";
+import VideoDetail from './components/VideoDetail';
+import VideoList from './components/VideoList';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      videos:[]
+    };
+  }
   render() {
+    const {videos} = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Youtube-clone</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="youtube-clone">
+        <NavBar />
+        <VideoDetail videos={videos[0]}/>
+        <VideoList videos={videos}/>
       </div>
     );
   }
