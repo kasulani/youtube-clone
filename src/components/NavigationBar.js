@@ -24,7 +24,7 @@ export default class NavBar extends Component {
                     loading={isLoading}
                     onSearchChange={this.onSearchChange}
                     value={term}
-                />;
+                />
             </nav>
         );
     }
