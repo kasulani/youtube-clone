@@ -8,7 +8,8 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
     "semantic-ui": "^2.2.13",
-    "semantic-ui-react": "^0.77.2"
+    "semantic-ui-react": "^0.77.2",
+    "youtube-api-search": "0.0.5"
   },
   "scripts": {
     "start": "npm-run-all --parallel open:src test:watch lint:watch",
