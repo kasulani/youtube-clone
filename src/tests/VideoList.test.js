@@ -5,12 +5,22 @@ import VideoList from "../components/VideoList";
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
-describe('Video Item Component tests', () => {
+describe('Video List Component tests', () => {
     let videoList;
     let props;
     beforeEach(() => {
         props = {
-            videos:[{etag:"e1"}]
+            videos:[{
+                etag:"e1",
+                snippet:{
+                    thumbnails:{
+                        medium:{
+                            url:"http://www.youtube.com"
+                        }
+                    }
+                }
+            }],
+            onVideoSelect: () => {}
         };
         videoList = mount(<VideoList {...props}/>);
     });

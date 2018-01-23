@@ -1,11 +1,17 @@
 import React from 'react';
 import { List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import VideoItem from './VideoItem';
+import VideoListItem from './VideoListItem';
 
-const VideoList = ({videos}) => {
+const VideoList = ({videos, onVideoSelect}) => {
     const videosItems = videos.map((video) => {
-        return <VideoItem key={video.etag} video={video}/>;
+        return(
+            <VideoListItem
+                onVideoSelect={onVideoSelect}
+                key={video.etag} 
+                video={video}
+            />
+        );
     });
     return(
         <List>
@@ -15,7 +21,8 @@ const VideoList = ({videos}) => {
 };
 
 VideoList.propTypes = {
-    videos: PropTypes.array.isRequired
+    videos: PropTypes.array.isRequired,
+    onVideoSelect: PropTypes.func.isRequired
 };
 
 export default VideoList;
