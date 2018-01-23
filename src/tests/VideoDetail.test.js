@@ -11,7 +11,18 @@ describe('Video Detail Component tests', () => {
     let props;
     beforeEach(() => {
         props = {
-            video:{}
+            video:{
+                id:{
+                    videoId: "eSD56y"
+                },
+                snippet:{
+                    thumbnails:{
+                        high:{
+                            url: "https://youtube.com"
+                        }
+                    }
+                }
+            }
         };
         videoDetail = mount(<VideoDetail {...props}/>);
     });
