@@ -1,31 +1,28 @@
-import React, { Component } from 'react';
-import {Search} from 'semantic-ui-react';
+import React from 'react';
+import { Search } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import '../styles/App.css';
 
-export default class NavBar extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            isLoading: false,
-            term: ''
-        };
-        this.onSearchChange = this.onSearchChange.bind(this);
-    }
-    
-    onSearchChange(event, {value}){
-        // handler for input text change
-        this.setState({term: value});
-    }
-    
-    render(){
-        const { isLoading, term } = this.state;
-        return(
-            <nav className="yt-nav-bar">
+const NavBar = ({ isLoading, term, onSearchChange }) => {
+    return(
+        <nav className="yt-nav-bar">
+            <div className="yt-search">
                 <Search
                     loading={isLoading}
-                    onSearchChange={this.onSearchChange}
+                    onSearchChange={function(event, {value}){ onSearchChange(event, {value}); }}
                     value={term}
+                    showNoResults={false}
+                    size="small"
                 />
-            </nav>
-        );
-    }
-}
+            </div>
+        </nav>
+    );
+};
+
+NavBar.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
+    term: PropTypes.string.isRequired,
+    onSearchChange: PropTypes.func.isRequired
+};
+
+export default NavBar;
