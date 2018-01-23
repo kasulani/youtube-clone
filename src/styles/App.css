@@ -1,40 +1,28 @@
-.yt-search {
+.App {
   text-align: center;
 }
 
-.yt-nav-bar {
-  margin-top: 10px;
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
-.yt-video-info {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid rgb(230, 227, 227);
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
 }
 
-.yt-video-item {
-  cursor: pointer;
-  border-bottom: 1px solid rgb(190, 189, 189);
-  margin-bottom: 5px;
+.App-title {
+  font-size: 1.5em;
 }
 
-.yt-video-item:hover {
-  background-color: rgba(252, 247, 247, 0.5);
+.App-intro {
+  font-size: large;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-.ui.input {
-  width: 75%;
-}
-
-.ui.floated.image, .ui.floated.images {
-  margin: 0px 5px 5px 0px;
-}
-
-.ui.small.image {
-  width: 200px;
 }
